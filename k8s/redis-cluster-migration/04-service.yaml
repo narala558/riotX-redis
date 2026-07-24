@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: riotx-redis-migration-metrics
+  namespace: redis-migration
+  labels:
+    app.kubernetes.io/name: riotx
+    app.kubernetes.io/component: redis-cluster-migration
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: riotx
+    app.kubernetes.io/component: redis-cluster-migration
+  ports:
+    - name: metrics
+      port: 8080
+      targetPort: metrics

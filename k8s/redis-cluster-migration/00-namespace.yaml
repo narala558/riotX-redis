@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: redis-migration
+  labels:
+    app.kubernetes.io/name: riotx
+    app.kubernetes.io/component: redis-cluster-migration
